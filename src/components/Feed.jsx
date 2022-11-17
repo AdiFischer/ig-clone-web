@@ -16,11 +16,11 @@ export default function Feed() {
   }, [setPhotoList])
     return (
        
-          <section>
+          <section className="photo-feed">
            {!photoList
            ? <p>Loading...</p>
            : photoList.map(post => (
-            <Post post={post} />
+            <Post post={post} key={post.photoId} />
            ))
           }
           {showUpload ? <UploadModal setPhotoList={setPhotoList} setShowUpload={setShowUpload}/> : null}

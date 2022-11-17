@@ -25,8 +25,7 @@ export default function UploadModal({setShowUpload, setPhotoList}) {
         .then(() => console.log('upload successful'))
         .catch(err => console.error(err))
         //2. figure out url for that photo
-        const photoUrl = `https://firebasestorage.googleapis.com/v0/b/upload-storage-ts-aaf
-        .appspot.com/o/${fileName}?alt=media`
+        const photoUrl = `https://firebasestorage.googleapis.com/v0/b/upload-storage-ts-aaf.appspot.com/o/photos%2F${fileName}?alt=media`
         //3. put that url into new photo object
         let newPhotoObject = values
         newPhotoObject.photo = photoUrl

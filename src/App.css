@@ -4,10 +4,22 @@
 
 
 header {
+  background-color: white;
+  z-index: 1;
   padding: 1em;
   position: fixed;
   width: 100vw;
   padding-bottom: 1px solid gray;
+}
+
+.photo-feed {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.ant-card {
+  margin-bottom: 32px;
+  width: 350px;
 }
 .App-header {
   background-color: white;
@@ -25,7 +37,7 @@ header {
 }
 
 .fab {
-  position: fixed;
+  position: absolute; 
   bottom: 24xp ;
 }
 
