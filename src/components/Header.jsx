@@ -1,9 +1,9 @@
 export default function Header() {
-    return (
-       
-          <header>
-            IG Clone
-          </header>
-       
-    )
+  return (
+
+    <header>
+      IG Clone
+    </header>
+
+  )
 }
