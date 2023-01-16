@@ -2,11 +2,14 @@
   text-align: center;
 }
 
+.logout {
+  margin-top: 12%;
+}
 
 header {
-  background-color: white;
+  background-color: rgb(204, 138, 138);
   z-index: 1;
-  padding: 1em;
+  padding: 3em;
   position: fixed;
   width: 100vw;
   padding-bottom: 1px solid gray;
@@ -19,8 +22,9 @@ header {
 
 .ant-card {
   margin-bottom: 32px;
-  width: 350px;
+  width: 600px;
 }
+
 .App-header {
   background-color: white;
   min-height: 100vh;
@@ -37,14 +41,15 @@ header {
 }
 
 .fab {
-  position: absolute; 
-  bottom: 24xp ;
+  position: absolute;
+  bottom: 24xp;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

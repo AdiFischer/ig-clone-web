@@ -1,9 +1,12 @@
-export default function Header() {
-  return (
+import Logout from "./Logout";
 
-    <header>
-      IG Clone
-    </header>
+export default function Header({ setUser }) {
+  return (
+    <div className="header">
+      <header>IG CLONE</header>
+      {/* <div className="logout"> */}
+      <Logout setUser={setUser} />
+    </div>
 
   )
 }

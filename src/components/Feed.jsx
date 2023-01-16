@@ -1,11 +1,11 @@
-
-
 import { useState, useEffect } from "react"
 import { Button } from "antd"
 import UploadModal from "./UploadModal"
 import Post from "./Post"
+// import Header from "./Header";
 
-export default function Feed() {
+
+export default function Feed({ setUser }) {
   const [photoList, setPhotoList] = useState()
   const [showUpload, setShowUpload] = useState(false)
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function Feed() {
   return (
 
     <section className="photo-feed">
+      {/* <Header setUser={setUser} /> */}
       {!photoList
         ? <p>Loading...</p>
         : photoList.map(post => (
@@ -28,7 +29,7 @@ export default function Feed() {
       {/* {showUpload &&} */}
       <Button onClick={() => setShowUpload(true)}
         className="fab" type="primary"
-        shape="circle" size="large">+</Button>
+        shape="circle" size="large">✚</Button>
     </section>
   )
 }

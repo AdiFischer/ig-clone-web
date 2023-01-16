@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app"
 import { getStorage, ref, uploadBytes } from "firebase/storage"
-import { Modal, Form, Input, Button, Upload  } from "antd"
+import { Modal, Form, Input, Button, Upload, Select } from "antd"
+import kid from "./avatars/kid.jpg"
+import man from "./avatars/man.jpg"
+import woman from "./avatars/woman.jpg"
 
 const firebaseConfig = {
     apiKey: "AIzaSyCddy_MlOAbHktYi4SyX81zUC921M-5lhE",
@@ -10,9 +13,9 @@ const firebaseConfig = {
     messagingSenderId: "923057526397",
     appId: "1:923057526397:web:94eb17c226b6bed9a94314",
     measurementId: "G-HJP9Z9TTXR"
-  };
+};
 
-export default function UploadModal({setShowUpload, setPhotoList}) {
+export default function UploadModal({ setShowUpload, setPhotoList }) {
     const handleNewPhoto = (values) => {
         console.log(values)
         //0. connect to fb storage
@@ -22,8 +25,8 @@ export default function UploadModal({setShowUpload, setPhotoList}) {
         const fileName = values.photo.file.name
         const imageRef = ref(storage, `photos/${fileName}`)
         uploadBytes(imageRef, values.photo.file.originFileObj)
-        .then(() => console.log('upload successful'))
-        .catch(err => console.error(err))
+            .then(() => console.log('upload successful'))
+            .catch(err => console.error(err))
         //2. figure out url for that photo
         const photoUrl = `https://firebasestorage.googleapis.com/v0/b/upload-storage-ts-aaf.appspot.com/o/photos%2F${fileName}?alt=media`
         //3. put that url into new photo object
@@ -36,14 +39,14 @@ export default function UploadModal({setShowUpload, setPhotoList}) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newPhotoObject)
         })
-        .then(results => results.json())
-        .then(neeListOfPhotos => {
-            //5. get back new list of photos
-            setPhotoList(neeListOfPhotos)
-            //6. setPhotoList and close Modal
-            closeModal()
-        })
-        .catch(alert)
+            .then(results => results.json())
+            .then(neeListOfPhotos => {
+                //5. get back new list of photos
+                setPhotoList(neeListOfPhotos)
+                //6. setPhotoList and close Modal
+                closeModal()
+            })
+            .catch(alert)
         //send a post req to api
         //get back new list of photos
         //setPhotoList
@@ -51,14 +54,19 @@ export default function UploadModal({setShowUpload, setPhotoList}) {
     }
 
     const closeModal = () => setShowUpload(false)
-    return(
+    return (
         <Modal title="Upload photo" open={true} footer={null} onCancel={closeModal}>
-            <Form labelCol={{ span:8 }} wrapperCol={{ span: 16}} onFinish={handleNewPhoto}>
-                <Form.Item label="user name" name="userName">
+            <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} onFinish={handleNewPhoto}>
+                <Form.Item label="User Name" name="userName">
                     <Input required />
                 </Form.Item>
-                <Form.Item label="Profile picture URL" name="profilePic">
-                    <Input required />
+                <Form.Item label="Avatar" name="avatar">
+                    {/* <Input required /> */}
+                    <Select>
+                        <Select.Option value={kid}>Kid</Select.Option>
+                        <Select.Option value={woman}>Woman</Select.Option>
+                        <Select.Option value={man}>Man</Select.Option>
+                    </Select>
                 </Form.Item>
                 <Form.Item label="Photo" name="photo">
                     <Upload listType="picture-card">
@@ -68,11 +76,11 @@ export default function UploadModal({setShowUpload, setPhotoList}) {
                 <Form.Item label="Description" name="description">
                     <Input.TextArea rows={4} required />
                 </Form.Item >
-                <Form.Item wrapperCol={{ offset :8, span: 16}}>
-                    <Button type="primary" htmlType="submit">Save Photo</Button>
+                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                    <Button type="primary" htmlType="submit">Upload</Button>
                 </Form.Item>
             </Form>
         </Modal>
-            )
+    )
 
 }

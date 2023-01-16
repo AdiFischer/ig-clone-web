@@ -14,11 +14,12 @@ export default function Post({ post, setPhotoList }) {
       .catch(alert)
   }
   const Heart = () => {
-    return post.likes ? <><HeartTwoTone twoToneColor="#eb2f96" onClick={handleLikeClick} /> 
-    {post.likes.toLocaleString()} Likes</> : <HeartTwoTone twoToneColor="#bbb" onClick={handleLikeClick}/> 
+    return post.likes ? <><HeartTwoTone twoToneColor="#eb2f96" onClick={handleLikeClick} />
+      {post.likes.toLocaleString()} Likes</> : <HeartTwoTone twoToneColor="#bbb" onClick={handleLikeClick} />
   }
   return (
     <Card
+      className="card"
       hoverable
       actions={[
         <Heart />
@@ -28,8 +29,9 @@ export default function Post({ post, setPhotoList }) {
       }
     >
       <Card.Meta
-        avatar={<Avatar src="https:randomuser.me/api/portraits/men/2.jpg" />}
-        title={post.username}
+        avatar={<Avatar src={post.avatar} size="large" />}
+        // <Avatar src="https:randomuser.me/api/portraits/men/2.jpg" />}
+        title={post.userName}
         description={post.description}
       />
     </Card>
