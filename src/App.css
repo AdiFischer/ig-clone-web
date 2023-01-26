@@ -9,10 +9,13 @@
 header {
   background-color: rgb(204, 138, 138);
   z-index: 1;
-  padding: 3em;
+  padding: 2em;
   position: fixed;
   width: 100vw;
   padding-bottom: 1px solid gray;
+  font-size: xx-large;
+  font-weight: bolder;
+  
 }
 
 .photo-feed {
