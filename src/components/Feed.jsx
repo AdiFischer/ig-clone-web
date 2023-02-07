@@ -17,7 +17,7 @@ export default function Feed({ setUser }) {
   }, [setPhotoList])
   return (
     <section className="photo-feed">
-      <Header setUser={setUser} />
+      <Header setUser={setUser}/>
       {!photoList
         ? <p>Loading...</p>
         : (photoList.map(post => (

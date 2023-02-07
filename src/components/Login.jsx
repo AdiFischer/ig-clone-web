@@ -19,13 +19,12 @@ export default function Login({ setUser }) {
     const response = await signInWithPopup(auth, provider)
       .catch(alert)
     setUser(response.user)
-    localStorage.setItem("user", JSON.stringify(response.user));
+    sessionStorage.setItem("user", JSON.stringify(response.user));
     // console.log(response.user)
   }
   return (
     <div className="login">
       <h4 className="login-text">IG CLONE</h4>
-      {/* <h5 className="login-text">Add Post</h5> */}
       <button className='login-button' type='primary' onClick={handleGoogleLogin}>Sign in with Google</button>
     </div>
   )
