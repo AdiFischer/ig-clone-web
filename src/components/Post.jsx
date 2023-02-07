@@ -30,7 +30,6 @@ export default function Post({ post, setPhotoList }) {
     >
       <Card.Meta
         avatar={<Avatar src={post.avatar} size="large" />}
-        // <Avatar src="https:randomuser.me/api/portraits/men/2.jpg" />}
         title={post.userName}
         description={post.description}
       />

@@ -2,45 +2,59 @@
   text-align: center;
 }
 
+.login-text{
+  font-size: xx-large;
+  font-weight: bolder;
+  color: #7643cd;
+}
+
 .logout {
-  margin-top: 12%;
+  margin-bottom: 2%;
+  color: rgb(252, 214, 214);
+  padding: 15px 25px;
+  border-radius: 100px;
+  background-color: #7643cd;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
 }
 
 header {
-  background-color: rgb(204, 138, 138);
-  z-index: 1;
-  padding: 2em;
-  position: fixed;
-  width: 100vw;
-  padding-bottom: 1px solid gray;
-  font-size: xx-large;
   font-weight: bolder;
-  
 }
 
-.photo-feed {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.ant-card {
-  margin-bottom: 32px;
-  width: 600px;
+body {
+  background-color: rgb(204, 138, 138);
 }
 
 .App-header {
-  background-color: white;
-  min-height: 100vh;
+  background-color: rgb(204, 138, 138);
+  /* min-height: 1vh; */
+  font-style: oblique;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: red;
+  font-size: xx-large;
+  font-weight: bolder;
+  /* font-size: calc(10px + 2vmin); */
+  color: rgb(149, 0, 255);
 }
 
-.App-link {
-  color: #61dafb;
+.photo-feed {
+  /* margin-top: 60px; */
+  margin-bottom: 60px;
+}
+
+.ant-card {
+  width: 55%;
+  margin: 0px auto 0px auto;
 }
 
 .fab {
@@ -48,12 +62,19 @@ header {
   bottom: 24xp;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.login-button {
+  margin-bottom: 2%;
+  color: rgb(252, 214, 214);
+  padding: 15px 25px;
+  border-radius: 100px;
+  background-color: #7643cd;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
 }

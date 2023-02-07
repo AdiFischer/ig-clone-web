@@ -1,5 +1,3 @@
-//import { Button, Form, Input, Layout } from 'antd'
-import { Button } from 'antd';
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 
@@ -14,8 +12,7 @@ const firebaseConfig = {
 };
 
 export default function Login({ setUser }) {
-  const handleGoogleLogin = async (e) => {
-    e.preventDefault()
+  const handleGoogleLogin = async () => {
     const app = initializeApp(firebaseConfig)
     const auth = getAuth(app)
     const provider = new GoogleAuthProvider()
@@ -29,46 +26,8 @@ export default function Login({ setUser }) {
     <div className="login">
       <h4 className="login-text">IG CLONE</h4>
       {/* <h5 className="login-text">Add Post</h5> */}
-      <Button type='primary' onClick={handleGoogleLogin}>Sign in with Google</Button>
+      <button className='login-button' type='primary' onClick={handleGoogleLogin}>Sign in with Google</button>
     </div>
   )
 }
 
-
-// export default function Login({setUser, setToken}) {
-//     const handleFormSubmit = (values) => {
-//         fetch('http://localhost:5002/login', {
-//             method: 'POST',
-//             headers: { 'Content-Type': 'application/json'},
-//             body: JSON.stringify(values)
-//         })
-//         .then(response => response.json())
-//         .then(data=> {
-//             setToken(data.token)
-//             setUser(data.user)
-//         })
-//         .catch(alert)
-//     }
-//     return (
-//         <Layout.Content style={{ padding: '50px' }}>
-//             <h1>Login</h1>
-//             <Form onFinish={handleFormSubmit} labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} >
-//                 <Form.Item label="Email" name="email" rules={[{
-//                     required: true,
-//                     message: 'Please enter a valid email'
-//                 }]}>
-//                     <Input />
-//                 </Form.Item>
-//                 <Form.Item label="Password" name="password" rules={[{
-//                     required: true,
-//                     message: 'Please enter password'
-//                 }]}>
-//                     <Input.Password />
-//                 </Form.Item>
-//                 <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
-//                     <Button type='primary' htmlType='submit'>Login</Button>
-//                 </Form.Item>
-//             </Form>
-//         </Layout.Content>
-//     )
-// }

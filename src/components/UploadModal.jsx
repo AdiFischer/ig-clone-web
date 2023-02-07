@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app"
 import { getStorage, ref, uploadBytes } from "firebase/storage"
 import { Modal, Form, Input, Button, Upload, Select } from "antd"
+import '../App.css';
+
 import kid from "./avatars/kid.jpg"
 import man from "./avatars/man.jpg"
 import woman from "./avatars/woman.jpg"

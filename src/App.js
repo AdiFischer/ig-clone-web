@@ -1,4 +1,4 @@
-import Header from './components/Header';
+// import Header from './components/Header';
 import Feed from './components/Feed';
 import './App.css';
 import Login from './components/Login';
@@ -15,7 +15,7 @@ function App() {
   }, []);
   return (
     <main className="App">
-      <Header />
+      {/* <Header /> */}
       <div className="App-header">
         {!user
           ? (<Login setUser={setUser} />)
