@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.login-text{
+.login-text {
   font-size: xx-large;
   font-weight: bolder;
   color: #7643cd;
@@ -48,13 +48,17 @@ body {
 }
 
 .photo-feed {
-  /* margin-top: 60px; */
   margin-bottom: 60px;
 }
 
 .ant-card {
   width: 55%;
   margin: 0px auto 0px auto;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.342) 0px 14px 28px,
+    rgba(0, 0, 0, 0.237) 0px 10px 10px;
+  margin-bottom: 20px;
 }
 
 .fab {
